@@ -1,0 +1,10 @@
+<div *ngIf="task">
+  <h2>{{ task.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{task.id}}</div>
+  <div>
+    <label>name:
+      {{task.name}}
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>

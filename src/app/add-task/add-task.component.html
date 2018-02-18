@@ -1,0 +1,54 @@
+<div class="container">
+<h2>{{statusMessage}}</h2>
+<hr>
+  <h1>Task Entry</h1>
+  <form #taskForm="ngForm" (ngSubmit)="createTask(taskForm)" novalidate>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="newTask.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" required [(ngModel)]="newTask.description" name="description">
+    </div>
+	 <div class="form-group">
+      <label for="url">Priority</label>
+       <select id="priority" class="form-control" [(ngModel)]="newTask.priority" name="priority">
+        <option>Low</option>
+		<option>High</option>
+      </select>
+    </div>
+	  <fieldset class="form-group">
+    <div class="row">
+    <div class="col-sm-10">
+	   <label for="url">Status</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" [(ngModel)]="newTask.status" name="status" id="gridRadios1" value="Completed" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Completed
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" [(ngModel)]="newTask.status" name="status" id="gridRadios2" value="Pending">
+          <label class="form-check-label" for="gridRadios2">
+            Pending
+          </label>
+        </div>
+       </div>
+    </div>
+  </fieldset>
+  
+   <div class="form-group row">
+       <div class="col-sm-10">
+	      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="archived" [(ngModel)]="newTask.archived" name="archived">
+        <label class="form-check-label" for="archived">
+         Archived/Unarchived
+        </label>
+      </div>
+    </div>
+  </div>
+  
+    <button type="submit" class="btn btn-default">Submit</button>
+	</form>
+</div>
